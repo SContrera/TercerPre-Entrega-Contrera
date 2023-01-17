@@ -25,7 +25,7 @@ def entregables(request):
 
 
 
-def cursoFormulario(request):
+def curso(request):
 
       if request.method == "POST":
 
@@ -40,13 +40,13 @@ def cursoFormulario(request):
       else:
             miFormulario = Cursoformulario()
 
-      return render(request, "app/cursoformulario.html", {"miFormulario": miFormulario})
+      return render(request, "app/curso.html", {"miFormulario": miFormulario})
 
 
 
 
 
-def profesoresformulario(request):
+def profesores(request):
 
       if request.method == "POST":
 
@@ -61,13 +61,13 @@ def profesoresformulario(request):
       else:
             miFormulario = Profesoresformulario()
 
-      return render(request, "app/profesoresformulario.html", {"miFormulario": miFormulario})
+      return render(request, "app/profesores.html", {"miFormulario": miFormulario})
 
 
 
 
 
-def estudiantesformulario(request):
+def estudiantes(request):
 
       if request.method == "POST":
 
@@ -82,13 +82,13 @@ def estudiantesformulario(request):
       else:
             miFormulario = Estudianteformulario()
 
-      return render(request, "app/estudiantesformulario.html", {"miFormulario": miFormulario})
+      return render(request, "app/estudiantes.html", {"miFormulario": miFormulario})
 
 
 
 
 
-def entregablesformulario(request):
+def entregables(request):
 
       if request.method == "POST":
 
@@ -103,4 +103,23 @@ def entregablesformulario(request):
       else:
             miFormulario = Entregablesformulario()
 
-      return render(request, "app/entregablesformulario.html", {"miFormulario": miFormulario})
+      return render(request, "app/entregables.html", {"miFormulario": miFormulario})
+
+
+def busquedacamada(request):
+      return render(request, 'app/busquedacamada.html')
+
+def buscar(request):
+      if  request.GET["camada"]:
+
+	      #respuesta = f"Estoy buscando la camada nro: {request.GET['camada'] }" 
+            camada = request.GET['camada'] 
+            cursos = Curso.objects.filter(camada__icontains=camada)
+
+            return render(request, "app/busquedacamada.html", {"cursos":cursos, "camada":camada})
+
+      else: 
+             respuesta = "No enviaste datos"
+                        
+      return HttpResponse(respuesta)
+      

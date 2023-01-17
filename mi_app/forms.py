@@ -3,11 +3,12 @@ from django import forms
 
 class Cursoformulario(forms.Form):
 
-    nombre=forms.CharField(max_length=40)
+    nombre=forms.CharField()
     camada = forms.IntegerField()
 
-    def __str__(self) :
-        return f' Nombre: {self.nombre} - Camada: {self.camada} '
+    # def __str__(self) :
+    
+    #     return f' nombre: {self.nombre} - Camada: {self.camada} '
 
 
 class Estudianteformulario(forms.Form):
@@ -25,3 +26,4 @@ class Entregablesformulario(forms.Form):
     nombre= forms.CharField(max_length=30)
     fechaDeEntrega = forms.DateField()  
     entregado = forms.BooleanField()
+

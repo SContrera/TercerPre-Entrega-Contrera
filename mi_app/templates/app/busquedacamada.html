@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busqueda</title>
+</head>
+<body>
+    
+<h1> Ingrese el número de la camada que desea buscar: </h1>
+    <form action="/mi_app/buscar" method="GET">
+        <input type="number" name="camada" id="camada">
+        <input type="submit" name="Buscar">
+     </form>
+
+     {% if cursos %}
+
+    <h2 style="color:rgb(8, 153, 153)">Estamos buscando el: {{camada}}</h2> 
+    <ul>
+	{% for curso in cursos %}
+		<li> {{curso.nombre}} </li>
+		<li> {{curso.camada}} </li>
+	{% endfor %}
+
+    </ul>
+
+    {% endif %}
+
+
+
+</body>
+</html>

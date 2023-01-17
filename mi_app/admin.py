@@ -10,3 +10,8 @@ admin.site.register(Estudiante)
 admin.site.register(Profesor)
 
 admin.site.register(Entregable)
+
+
+admin.site.site_header = 'Mi aplicacion'
+admin.site.index_title = 'Panel de control de mi sitio'
+admin.site.site_title = 'Admnistración'

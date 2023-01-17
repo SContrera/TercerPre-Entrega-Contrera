@@ -7,10 +7,14 @@ urlpatterns = [
     path('estudiantes/', estudiantes, name = 'Estudiantes'),
     path('profesores/',profesores, name = 'Profesores'),
     path('entregables/',entregables, name = 'Entregables'),
-    path('cursoformulario', cursoFormulario, name='CursoFormulario'),
-    path('profesoresformulario', profesoresformulario, name='ProfesoresFormulario'),
-    path('estudiantesformulario', estudiantesformulario, name='EstudiantesFormulario'),
-    path('entregablesformulario', entregablesformulario, name='EntregablesFormulario'),
+    # path('cursoformulario', cursoFormulario, name='CursoFormulario'),
+    # path('profesoresformulario', profesoresformulario, name='ProfesoresFormulario'),
+    # path('estudiantesformulario', estudiantesformulario, name='EstudiantesFormulario'),
+    # path('entregablesformulario', entregablesformulario, name='EntregablesFormulario'),
+    path('buscarcamada/', busquedacamada, name='busquedaCamada'),
+    path('buscar/', buscar),
+    # path('leerProfesores', leerpr, name = "LeerProfesores")
+
 
 
 
