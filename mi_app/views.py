@@ -134,7 +134,7 @@ def leerProfesores(request):
 
 def eliminarProfesor(request, profesor_nombre):
  
-    profesor = Profesor.objects.get(name=profesor_nombre)
+    profesor = Profesor.objects.get(nombre=profesor_nombre)
     profesor.delete()
  
     # vuelvo al menú
