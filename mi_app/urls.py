@@ -14,7 +14,8 @@ urlpatterns = [
     path('buscarcamada/', busquedacamada, name='busquedaCamada'),
     path('buscar/', buscar),
     path('leerprofesores', leerProfesores, name = "LeerProfesores"),
-    path('eliminarprofesor/<profesor_nombre>/', eliminarProfesor, name="eliminarprofesor")
+    path('eliminarprofesor/<profesor_nombre>/', eliminarProfesor, name="eliminarprofesor"),
+    path('editarprofesor/<profesor_nombre>/', editarProfesor, name='editarprofesor')
 
 
 
