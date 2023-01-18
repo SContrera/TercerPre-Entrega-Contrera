@@ -13,7 +13,8 @@ urlpatterns = [
     # path('entregablesformulario', entregablesformulario, name='EntregablesFormulario'),
     path('buscarcamada/', busquedacamada, name='busquedaCamada'),
     path('buscar/', buscar),
-    # path('leerProfesores', leerpr, name = "LeerProfesores")
+    path('leerprofesores', leerProfesores, name = "LeerProfesores"),
+    path('eliminarprofesor/<profesor_nombre>/', eliminarProfesor, name="eliminarprofesor")
 
 
 

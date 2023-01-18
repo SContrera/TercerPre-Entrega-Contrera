@@ -123,3 +123,23 @@ def buscar(request):
                         
       return HttpResponse(respuesta)
       
+
+def leerProfesores(request):
+
+      profesores = Profesor.objects.all() #trae todos los profesores
+
+      contexto= {"profesores":profesores} 
+
+      return render(request, "app/leerProfesores.html",contexto)
+
+def eliminarProfesor(request, profesor_nombre):
+ 
+    profesor = Profesor.objects.get(name=profesor_nombre)
+    profesor.delete()
+ 
+    # vuelvo al menú
+    profesores = Profesor.objects.all()  # trae todos los profesores
+ 
+    contexto = {"profesores": profesores}
+ 
+    return render(request, "app/leerProfesores.html", contexto)
