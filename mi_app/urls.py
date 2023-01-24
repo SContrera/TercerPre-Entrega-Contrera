@@ -15,7 +15,12 @@ urlpatterns = [
     path('buscar/', buscar),
     path('leerprofesores', leerProfesores, name = "LeerProfesores"),
     path('eliminarprofesor/<profesor_nombre>/', eliminarProfesor, name="eliminarprofesor"),
-    path('editarprofesor/<profesor_nombre>/', editarProfesor, name='editarprofesor')
+    path('editarprofesor/<profesor_nombre>/', editarProfesor, name='editarprofesor'),
+    path('leercursos', leerCursos, name = "leercursos"),
+    path('eliminarcurso/<curso_nombre>/', eliminarCurso, name="eliminarcurso"),
+    path('editarcurso/<curso_nombre>/', editarCurso, name='editarcurso'),
+
+
 
 
 

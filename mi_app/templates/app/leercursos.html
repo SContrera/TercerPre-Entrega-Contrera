@@ -1,0 +1,27 @@
+{% extends "app/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+<body>
+    {% for p in cursos %}
+        <li>{{p}}</li>  
+        <button>
+            <a href="{% url 'eliminarcurso' p.nombre %}"> Eliminar</a>
+            <a href="{% url 'editarcurso' p.nombre %}"> Editar</a>
+        </button>
+    {% endfor %}
+    
+    
+    <br>
+   <button> <a href="cursos">Agregar otro Curso</a> </button>
+    <br>
+    <button><p><a href=" ../mi_app">Regresar</a></button>
+
+
+</body>
+
+{% endblock %}

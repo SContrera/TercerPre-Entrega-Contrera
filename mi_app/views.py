@@ -181,3 +181,61 @@ def editarProfesor(request, profesor_nombre):
     # Voy al html que me permite editar
     return render(request, "app/editarprofesor.html", {"miFormulario": miFormulario, "profesor_nombre": profesor_nombre})
 
+
+
+
+def leerCursos(request):
+
+      cursos = Curso.objects.all() #trae todos los profesores
+
+      contexto= {"cursos":cursos} 
+
+      return render(request, "app/leercursos.html",contexto)
+
+
+def eliminarCurso(request, curso_nombre):
+
+      
+      curso = Curso.objects.get(nombre=curso_nombre)
+      
+      curso.delete()
+ 
+    # vuelvo al menú
+      cursos = Curso.objects.all()  # trae todos los profesores
+ 
+      contexto = {"cursos": cursos}
+ 
+      return render(request, "app/leercursos.html", contexto)
+
+def editarCurso(request, curso_nombre):
+      
+       curso = Curso.objects.get(nombre=curso_nombre)
+
+       # Si es metodo POST hago lo mismo que el agregar
+       if request.method == 'POST':
+            
+            miFormulario = Cursoformulario(request.POST)
+
+            print(miFormulario)
+
+            if miFormulario.is_valid:
+                  
+                  
+                  informacion = miFormulario.cleaned_data
+
+                  curso.nombre = informacion['nombre']
+                  curso.camada = informacion['camada']
+
+                  curso.save()
+            # Vuelvo al inicio o a donde quieran
+                  return render(request, "app/inicio.html")
+            
+            
+            
+             # En caso que no sea post
+       else:
+
+            miFormulario = Cursoformulario(initial={'nombre': curso.nombre, 'camada': curso.camada})
+
+        # Voy al html que me permite editar
+            return render(request, "app/editarcurso.html", {"miFormulario": miFormulario, "curso_nombre": curso_nombre})
