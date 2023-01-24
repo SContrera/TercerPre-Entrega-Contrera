@@ -1,0 +1,22 @@
+{% extends 'app/login_pantalla.html' %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<!-- Aqui va lo que cambia, y lo asociado a esta vista:=) -->
+    <form action="" method="POST">
+        {% csrf_token %}
+            {{ form.as_p }}
+        <button type="submit">Inciar sesion</button>
+     </form>
+    
+    <button><a href="#!" type="submit">Registrate!</a></button>
+    <p><a style="border-color: black;" class="btn btn-primary " href="{% url 'Inicio' %}">Regresar al inicio</a>
+</body>
+
+
+
+
+
+
+{% endblock %}
