@@ -26,6 +26,6 @@ urlpatterns = [
 
 
     path('login', login_request, name= 'login'),
-    path('registro', register, name='registro'),
+    path('registro', register, name='Registro'),
 
 ]
