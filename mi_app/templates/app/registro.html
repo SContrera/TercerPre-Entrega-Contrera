@@ -1,0 +1,17 @@
+{% extends 'app/padre.html' %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<!-- Aqui va lo que cambia, y lo asociado a esta vista:=) -->
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Registrarse</button>
+        <br>
+    <p><a class="btn btn-primary" href=" ../mi_app">Regresar al inicio</a>
+    </form>
+</body>
+
+{% endblock %}
