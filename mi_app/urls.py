@@ -19,6 +19,9 @@ urlpatterns = [
     path('leercursos', leerCursos, name = "leercursos"),
     path('eliminarcurso/<curso_nombre>/', eliminarCurso, name="eliminarcurso"),
     path('editarcurso/<curso_nombre>/', editarCurso, name='editarcurso'),
+    path('leerestudiantes', leerEstudiantes, name = "leerestudiantes"),
+    path('eliminarestudiante/<estudiante_nombre>/', eliminarEstudiantes, name="eliminarestudiante"),
+    path('editarestudiante/<estudiante_nombre>/', editarEstudiante, name='editarestudiante'),
 
 
 
