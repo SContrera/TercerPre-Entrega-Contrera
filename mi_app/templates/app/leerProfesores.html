@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% extends "app/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
 <body>
     {% for p in profesores %}
         <li>{{p}}</li>  
@@ -14,8 +14,14 @@
             <a href="{% url 'editarprofesor' p.nombre %}"> Editar</a>
         </button>
     {% endfor %}
+    
+    
     <br>
-    <a href="profesores">Agregar otro Profesor</a>
+   <button> <a href="profesores">Agregar otro Profesor</a> </button>
+    <br>
+    <button><p><a href=" ../mi_app">Regresar</a></button>
+
+
 </body>
 
-</html>
+{% endblock %}
