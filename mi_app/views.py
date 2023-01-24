@@ -357,3 +357,28 @@ def register(request):
             form = UserRegisterForm()     
 
       return render(request,"app/registro.html" ,  {"form":form})
+
+
+
+from django.contrib.auth.decorators import login_required
+
+
+@login_required
+def profesores(request):
+
+      return render(request, "app/profesores.html")
+
+# @login_required
+# def estudiantes(request):
+
+#       return render(request, "app/inicio.html")
+
+# @login_required
+# def curso(request):
+
+#       return render(request, "app/inicio.html")
+
+# @login_required
+# def entregables(request):
+
+#       return render(request, "app/inicio.html")
